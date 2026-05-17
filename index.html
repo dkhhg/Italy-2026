@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Italy Slow-Pace Trip — June 7–21, 2026</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --card: #ffffff;
+    --ink: #2b2520;
+    --muted: #6b5f55;
+    --accent: #b04a2f;
+    --accent-soft: #f3e3dc;
+    --olive: #6b7d3a;
+    --line: #e8e1d6;
+    --elder: #5a7a9a;
+    --elder-soft: #e6edf3;
+    --alpine: #3d7a6e;
+    --alpine-soft: #dfeae6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  header {
+    background: linear-gradient(135deg, #b04a2f, #d97a4a 55%, #3d7a6e);
+    color: #fff;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: 0.5px; }
+  header p { margin: 0; opacity: 0.94; font-size: 14px; }
+  header .sub { margin-top: 8px; font-size: 12.5px; opacity: 0.88; }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  nav a {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 12.5px;
+    padding: 5px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    transition: all 0.15s;
+  }
+  nav a:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  nav a.alpine:hover { background: var(--alpine-soft); border-color: var(--alpine); color: var(--alpine); }
+  main { max-width: 880px; margin: 0 auto; padding: 24px 16px 60px; }
+
+  .section-divider {
+    text-align: center;
+    margin: 30px 0 18px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    position: relative;
+  }
+  .section-divider::before, .section-divider::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background: var(--line);
+    vertical-align: middle;
+    margin: 0 12px;
+  }
+  .section-divider.tuscany { color: var(--accent); }
+  .section-divider.bologna { color: #8b6914; }
+  .section-divider.dolomites { color: var(--alpine); }
+
+  .overview {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    overflow-x: auto;
+  }
+  .overview h3 { margin: 0 0 12px; font-size: 15px; color: var(--accent); }
+  .overview table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .overview th, .overview td { text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--line); }
+  .overview th { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .overview tr.class td { background: #fff8ec; }
+  .overview tr.dol-row td { background: #f1f6f4; }
+  .overview tr.dol-row.class td { background: #fff8ec; }
+
+  .day {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .day.dol { border-left: 4px solid var(--alpine); }
+  .day-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--accent-soft);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .day.dol .day-head { border-bottom-color: var(--alpine-soft); }
+  .day-head h2 { margin: 0; font-size: 19px; color: var(--accent); }
+  .day.dol .day-head h2 { color: var(--alpine); }
+  .day-head .date { font-size: 13px; color: var(--muted); }
+  .section { margin-top: 14px; }
+  .section h3 {
+    margin: 0 0 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--olive);
+  }
+  .plan-list, .rec-list { margin: 0; padding-left: 18px; }
+  .plan-list li, .rec-list li { margin-bottom: 4px; font-size: 14.5px; }
+  .rec-list li b { color: var(--accent); }
+  .day.dol .rec-list li b { color: var(--alpine); }
+  .tip {
+    background: #fff8ec;
+    border-left: 3px solid #d4a017;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 13.5px;
+    border-radius: 4px;
+  }
+  .elder-tip {
+    background: var(--elder-soft);
+    border-left: 3px solid var(--elder);
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 13.5px;
+    border-radius: 4px;
+  }
+  .elder-tip b { color: var(--elder); }
+  .alpine-tip {
+    background: var(--alpine-soft);
+    border-left: 3px solid var(--alpine);
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 13.5px;
+    border-radius: 4px;
+  }
+  .alpine-tip b { color: var(--alpine); }
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .food-card {
+    background: #fcf6f0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13.5px;
+  }
+  .day.dol .food-card { background: #f3f8f6; }
+  .food-card b { color: var(--accent); display: block; margin-bottom: 2px; }
+  .day.dol .food-card b { color: var(--alpine); }
+  .food-card span { color: var(--muted); font-size: 12.5px; }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge.class { background: #fff1d2; color: #8b6914; }
+  .badge.easy { background: #e9eedb; color: var(--olive); }
+  .badge.alpine { background: var(--alpine-soft); color: var(--alpine); }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 20px; }
+
+  .map-wrap {
+    max-width: 880px;
+    margin: 20px auto 0;
+    padding: 0 16px;
+  }
+  .map-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .map-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .map-head h3 { margin: 0; font-size: 15px; color: var(--accent); }
+  .map-btn {
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: opacity 0.15s;
+  }
+  .map-btn:hover { opacity: 0.88; }
+  #map { height: 440px; width: 100%; }
+  .map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 18px;
+    background: #fcf6f0;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+  }
+  .map-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .map-legend .dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .map-legend .dot.alpine { background: var(--alpine); }
+
+  .booking, .rules {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+  }
+  .booking h3, .rules h3 { margin: 0 0 10px; font-size: 15px; color: var(--accent); }
+  .booking ul, .rules ul { margin: 0; padding-left: 20px; font-size: 14px; }
+  .booking li, .rules li { margin-bottom: 5px; }
+  .booking h4 {
+    margin: 12px 0 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--olive);
+  }
+
+  /* ========== MOBILE ========== */
+  @media (max-width: 700px) {
+    header { padding: 22px 16px; }
+    header h1 { font-size: 22px; }
+    header p { font-size: 13px; }
+    header .sub { font-size: 11.5px; }
+
+    main { padding: 14px 10px 40px; }
+
+    nav {
+      gap: 5px;
+      padding: 10px 8px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav a {
+      font-size: 12px;
+      padding: 6px 10px;
+      flex-shrink: 0;
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .map-wrap { padding: 0 10px; }
+    .map-head { padding: 10px 14px; flex-direction: column; align-items: flex-start; }
+    .map-head h3 { font-size: 13.5px; line-height: 1.3; }
+    .map-btn { font-size: 12px; padding: 8px 12px; width: 100%; text-align: center; }
+    #map { height: 300px; }
+    .map-legend { padding: 8px 14px; font-size: 11.5px; gap: 6px; }
+    .map-legend .dot { width: 16px; height: 16px; font-size: 10px; }
+
+    .overview { padding: 14px 14px; font-size: 12px; }
+    .overview h3 { font-size: 14px; }
+    .overview th, .overview td { padding: 6px 6px; font-size: 11.5px; }
+
+    .day { padding: 16px 16px; border-radius: 10px; }
+    .day-head h2 { font-size: 16.5px; line-height: 1.3; }
+    .day-head .date { font-size: 12px; margin-top: 4px; }
+    .badge { font-size: 10.5px; padding: 2px 7px; }
+
+    .section h3 { font-size: 12px; }
+    .plan-list li, .rec-list li { font-size: 13.5px; line-height: 1.5; }
+    .tip, .elder-tip, .alpine-tip { font-size: 12.5px; padding: 8px 10px; }
+
+    .food-grid { grid-template-columns: 1fr; gap: 8px; }
+    .food-card { padding: 9px 11px; font-size: 12.5px; }
+    .food-card span { font-size: 12px; }
+
+    .booking, .rules { padding: 14px 16px; }
+    .booking ul, .rules ul { font-size: 13px; }
+    .section-divider { font-size: 11px; letter-spacing: 2px; }
+    .section-divider::before, .section-divider::after { width: 30px; margin: 0 8px; }
+  }
+
+  /* Tap targets — links and buttons get at least 44px for thumb tapping */
+  @media (max-width: 700px) {
+    .map-btn { min-height: 40px; display: inline-flex; align-items: center; justify-content: center; }
+    a { -webkit-tap-highlight-color: rgba(176, 74, 47, 0.15); }
+  }
+
+  /* Avoid iOS auto-zoom on tap by keeping font >= 16px on inputs (no inputs here, but safe) */
+  @media (max-width: 700px) {
+    body { -webkit-text-size-adjust: 100%; }
+  }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+<header>
+  <h1>Italy Slow-Pace Trip</h1>
+  <p>Tuscany · Bologna · Dolomites · 7–21 June 2026</p>
+  <p class="sub">Pisa → Siena → Val d'Orcia → Florence → Bologna → Val Gardena → Dobbiaco · 15 days, slow pace with elderly companions</p>
+</header>
+
+<div class="map-wrap">
+  <div class="map-card">
+    <div class="map-head">
+      <h3>📍 Route map — full 15-day itinerary</h3>
+      <a class="map-btn" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/dir/Treviso+Airport,+Italy/Pisa,+Italy/Siena,+Italy/Pienza,+Italy/Castellina+in+Chianti,+Italy/Florence,+Italy/Bologna,+Italy/Ortisei,+Italy/Dobbiaco,+Italy">
+        Open in Google Maps ↗
+      </a>
+    </div>
+    <div id="map"></div>
+    <div class="map-legend">
+      <span><span class="dot">0</span> Treviso Airport</span>
+      <span><span class="dot">1</span> Pisa</span>
+      <span><span class="dot">2</span> Siena</span>
+      <span><span class="dot">3</span> Val d'Orcia</span>
+      <span><span class="dot">4</span> Chianti (wine 🍷)</span>
+      <span><span class="dot">5</span> Florence</span>
+      <span><span class="dot">6</span> Bologna</span>
+      <span><span class="dot alpine">7</span> Val Gardena</span>
+      <span><span class="dot alpine">8</span> Dobbiaco</span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#overview">Overview</a>
+  <a href="#day1">D1</a><a href="#day2">D2</a><a href="#day3">D3</a><a href="#day4">D4</a>
+  <a href="#day5">D5</a><a href="#day6">D6</a><a href="#day7">D7</a><a href="#day8">D8</a>
+  <a href="#day9" class="alpine">D9</a><a href="#day10" class="alpine">D10</a>
+  <a href="#day11" class="alpine">D11</a><a href="#day12" class="alpine">D12</a>
+  <a href="#day13" class="alpine">D13</a><a href="#day14" class="alpine">D14</a>
+  <a href="#day15" class="alpine">D15</a>
+  <a href="#booking">Bookings</a>
+</nav>
+
+<main>
+
+<!-- OVERVIEW -->
+<section class="overview" id="overview">
+  <h3>Quick overview · 15 days · 7 bases</h3>
+  <table>
+    <thead>
+      <tr><th>Date</th><th>Day</th><th>Sleep</th><th>Main plan</th><th>Evening</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>7 Jun</td><td>Sun</td><td>Pisa</td><td>Treviso → Pisa, easy walk</td><td>Free</td></tr>
+      <tr class="class"><td>8 Jun</td><td>Mon</td><td>Siena</td><td>Pisa sights → Siena</td><td>Class 7–10 pm</td></tr>
+      <tr><td>9 Jun</td><td>Tue</td><td>Val d'Orcia</td><td>Slow Siena → scenic drive</td><td>Free</td></tr>
+      <tr class="class"><td>10 Jun</td><td>Wed</td><td>Val d'Orcia</td><td>Pienza / San Quirico / Bagno Vignoni loop</td><td>Class 7–10 pm</td></tr>
+      <tr class="class"><td>11 Jun</td><td>Thu</td><td>Florence</td><td>Chianti vineyard lunch → Florence</td><td>Class 7–10 pm</td></tr>
+      <tr><td>12 Jun</td><td>Fri</td><td>Florence</td><td>Florence main sights — relaxed</td><td>Free</td></tr>
+      <tr><td>13 Jun</td><td>Sat</td><td>Florence</td><td>Buffer / rest / missed sights</td><td>Free</td></tr>
+      <tr><td>14 Jun</td><td>Sun</td><td>Bologna</td><td>Florence → Bologna</td><td>Free</td></tr>
+      <tr class="dol-row class"><td>15 Jun</td><td>Mon</td><td>Val Gardena</td><td>Bologna → Val Gardena transfer</td><td>Class 7–10 pm</td></tr>
+      <tr class="dol-row"><td>16 Jun</td><td>Tue</td><td>Val Gardena</td><td>Seceda by lift</td><td>Free</td></tr>
+      <tr class="dol-row class"><td>17 Jun</td><td>Wed</td><td>Val Gardena</td><td>Alpe di Siusi OR Val di Funes</td><td>Class 7–10 pm</td></tr>
+      <tr class="dol-row class"><td>18 Jun</td><td>Thu</td><td>Dobbiaco</td><td>Transfer to eastern Dolomites</td><td>Class 7–10 pm</td></tr>
+      <tr class="dol-row"><td>19 Jun</td><td>Fri</td><td>Dobbiaco</td><td>Tre Cime / Lake Misurina</td><td>Free</td></tr>
+      <tr class="dol-row"><td>20 Jun</td><td>Sat</td><td>Dobbiaco</td><td>Lago di Braies OR Cortina</td><td>Free</td></tr>
+      <tr class="dol-row"><td>21 Jun</td><td>Sun</td><td>—</td><td>Drive to airport / departure</td><td>—</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="section-divider tuscany">· Tuscany ·</div>
+
+<!-- DAY 1 -->
+<section class="day" id="day1">
+  <div class="day-head">
+    <h2>Day 1 · Treviso → Pisa <span class="badge easy">Easy</span></h2>
+    <span class="date">Sun, 7 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Pick up car at Treviso Airport · drive to Pisa</li>
+      <li>Check in · park at hotel or outside ZTL</li>
+      <li>Easy evening walk: Lungarno → Borgo Stretto → Piazza dei Cavalieri → Piazza dei Miracoli</li>
+      <li>Simple dinner, early night · no tower climb</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks</h3>
+    <ul class="rec-list">
+      <li><b>Lungarno at sunset</b> — flat riverside walk, benches for rest stops.</li>
+      <li><b>Piazza dei Cavalieri</b> — quieter than the tower area, plenty of café seating.</li>
+      <li><b>Piazza dei Miracoli exterior only</b> — large flat lawn, easy benches, photo-friendly in evening light.</li>
+    </ul>
+  </div>
+
+  <div class="elder-tip"><b>Elder note:</b> if anyone is tired after the drive, skip Lungarno and Borgo Stretto — go directly to Piazza dei Miracoli for photos and dinner nearby. Total walking can be under 1 km.</div>
+
+  <div class="section">
+    <h3>Where to eat — close to Piazza dei Miracoli</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Ristorante La Buca</b><span>Sit-down trattoria 2 min from the tower. Tuscan classics, parking nearby.</span></div>
+      <div class="food-card"><b>Osteria dei Cavalieri</b><span>Calm room, no stairs, great pasta. Reserve a ground-floor table.</span></div>
+      <div class="food-card"><b>Hotel restaurant</b><span>After a long drive, eating at the hotel is the kindest choice. Many Pisa hotels offer half-board.</span></div>
+      <div class="food-card"><b>Gelateria De' Coltelli</b><span>Outdoor benches on the river. Try if you take the Lungarno walk.</span></div>
+    </div>
+    <div class="tip">🍴 <b>Try:</b> cecìna, pasta with rabbit (coniglio), Bianco Pisano di San Torpè wine.</div>
+  </div>
+</section>
+
+<!-- DAY 2 -->
+<section class="day" id="day2">
+  <div class="day-head">
+    <h2>Day 2 · Pisa → Siena <span class="badge class">Class 7–10 pm</span></h2>
+    <span class="date">Mon, 8 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>08:30–12:00 · Piazza dei Miracoli only (Tower exterior, Cathedral, Baptistery)</li>
+      <li>Lunch in Pisa · collect car</li>
+      <li>Drive directly to Siena · target arrival 15:30–16:30</li>
+      <li>Check in, rest, light early dinner before class</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks — Pisa morning</h3>
+    <ul class="rec-list">
+      <li><b>Cathedral (Duomo)</b> — flat entry, beautiful interior, free with combo ticket.</li>
+      <li><b>Baptistery</b> — go for the 30-min acoustic demonstrations (top of every half-hour). Sit on the bench.</li>
+      <li><b>Camposanto</b> — only if energy allows; otherwise skip without regret.</li>
+      <li><b>Tower climb</b> — <b>skip</b>. 251 narrow tilted steps with no central handrail, not elder-safe.</li>
+    </ul>
+  </div>
+
+  <div class="elder-tip"><b>Elder note:</b> the Opera della Primaziale ticket office offers free fast-track + step-free routing for the Cathedral and Baptistery on request.</div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Pisa lunch: Ristorante La Buca</b><span>Closest sit-down to the tower, easy walk to car.</span></div>
+      <div class="food-card"><b>Pisa lunch alt: Trattoria S. Omobono</b><span>Old-Pisa cooking near Piazza delle Vettovaglie, ground-floor seating.</span></div>
+      <div class="food-card"><b>Siena dinner: Osteria Boccon del Prete</b><span>Small, quiet, reliable. 5-min walk from the Campo. Book 6:30 pm.</span></div>
+      <div class="food-card"><b>Siena takeaway: Pizzicheria de Miccoli</b><span>Iconic deli on Via di Città. Panini + pecorino for hotel-room dinner before class.</span></div>
+    </div>
+    <div class="tip">⏰ <b>Class day:</b> takeaway from Pizzicheria de Miccoli is the safest bet — at the hotel by 6 pm, no stress.</div>
+  </div>
+</section>
+
+<!-- DAY 3 -->
+<section class="day" id="day3">
+  <div class="day-head">
+    <h2>Day 3 · Slow Siena → Val d'Orcia <span class="badge easy">Free evening</span></h2>
+    <span class="date">Tue, 9 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Morning: Piazza del Campo, Siena Cathedral, slow coffee + lunch</li>
+      <li>Afternoon scenic drive: Siena → Crete Senesi → San Quirico / Pienza</li>
+      <li>1–2 photo stops only · settle in for the evening</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks — Siena</h3>
+    <ul class="rec-list">
+      <li><b>Piazza del Campo</b> — the shell-shaped square is flat once you reach it. Sit on the brick slope, watch the world.</li>
+      <li><b>Siena Cathedral</b> — book the OPA SI Pass and ask staff about step-free entry. The Piccolomini Library is the highlight; skip the Facciatone rooftop.</li>
+      <li><b>Torre del Mangia</b> — <b>skip</b> (400 narrow steps).</li>
+      <li><b>Parking</b> — Santa Caterina car park has covered escalators that lift you straight into the historic centre.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks — afternoon drive</h3>
+    <ul class="rec-list">
+      <li><b>Cappella della Madonna di Vitaleta viewpoint</b> — safe pull-off, iconic chapel framed by cypresses. 5-min photo stop.</li>
+      <li><b>Bagno Vignoni preview</b> — if energy allows, park and walk the flat central square.</li>
+      <li>Avoid unpaved cypress side-roads — rental cars and rough gravel don't mix.</li>
+    </ul>
+  </div>
+
+  <div class="elder-tip"><b>Where to sleep:</b> <b>San Quirico d'Orcia</b> is the easier base — flatter, more parking, restaurants closer to most hotels. Pienza is prettier but more uphill.</div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Siena lunch: Trattoria Papei</b><span>On Piazza del Mercato just behind the Campo. Big shaded terrace, classic pici.</span></div>
+      <div class="food-card"><b>Siena sweet: Nannini</b><span>Stand-up bar for ricciarelli + espresso, or sit-down room upstairs (has elevator).</span></div>
+      <div class="food-card"><b>San Quirico dinner: Trattoria Osenna</b><span>Family-run, calm, pici al cinghiale. Ground floor.</span></div>
+      <div class="food-card"><b>Pienza dinner alt: La Buca delle Fate</b><span>Stone cellar with even floor, very welcoming.</span></div>
+    </div>
+    <div class="tip">🍷 <b>Try:</b> pici, pappardelle al cinghiale, ricciarelli, Brunello or Rosso di Montalcino.</div>
+  </div>
+</section>
+
+<!-- DAY 4 -->
+<section class="day" id="day4">
+  <div class="day-head">
+    <h2>Day 4 · Val d'Orcia gentle loop <span class="badge class">Class 7–10 pm</span></h2>
+    <span class="date">Wed, 10 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Pienza (1.5–2 h) — walk + view terrace + coffee</li>
+      <li>Scenic drive: Pienza → Monticchiello road (30–45 min)</li>
+      <li>San Quirico d'Orcia (1.5–2 h) — Horti Leonini + lunch</li>
+      <li>Bagno Vignoni (45–60 min) — thermal-square walk</li>
+      <li>Back to hotel by 17:00–17:30 · rest before class</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks — Pienza</h3>
+    <ul class="rec-list">
+      <li><b>Corso il Rossellino</b> — main street, mostly flat. Cheese shops, Renaissance façades.</li>
+      <li><b>Panoramic walk (Via dell'Amore)</b> — short paved path with the best Val d'Orcia view. Benches.</li>
+      <li><b>Pecorino tasting</b> — Marusco e Maria on the main street. Sit, taste, ship some home.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks — San Quirico + Bagno Vignoni</h3>
+    <ul class="rec-list">
+      <li><b>Horti Leonini</b> — peaceful Renaissance garden, flat gravel, free, benches in shade.</li>
+      <li><b>Collegiata di San Quirico</b> — small flat-entry church, 10 min.</li>
+      <li><b>Bagno Vignoni square</b> — the village is one flat square around the thermal pool. The easiest stop of the day.</li>
+    </ul>
+  </div>
+
+  <div class="elder-tip"><b>Elder note:</b> all three villages are walkable in under 500 m end-to-end. Drop passengers near the square, park separately, and meet at a café.</div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Pienza coffee: Caffè La Posta</b><span>Outdoor tables on the main street. Shaded seating.</span></div>
+      <div class="food-card"><b>San Quirico lunch: Trattoria al Vecchio Forno</b><span>Pretty garden, pici and pecorino specialities.</span></div>
+      <div class="food-card"><b>San Quirico alt: Il Conte Matto</b><span>Slightly elevated terrace, valley view, ground-floor dining room.</span></div>
+      <div class="food-card"><b>Bagno Vignoni: Bar Centrale</b><span>Right on the thermal square. Coffee + pastry with view.</span></div>
+    </div>
+    <div class="tip">🧀 <b>Buy to bring home:</b> Pecorino di Pienza, Val d'Orcia honey, saffron, a bottle of Rosso di Montalcino.</div>
+  </div>
+</section>
+
+<!-- DAY 5 -->
+<section class="day" id="day5">
+  <div class="day-head">
+    <h2>Day 5 · Val d'Orcia → Chianti wine lunch → Florence <span class="badge class">Class 7–10 pm</span></h2>
+    <span class="date">Thu, 11 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>09:30 leave Val d'Orcia · drive ~1h 15min to Castellina in Chianti</li>
+      <li>11:30–13:30 <b>Vineyard estate lunch in Chianti</b></li>
+      <li>13:30–15:30 drive to Florence (≈1 h)</li>
+      <li>15:30–16:00 arrive Florence · hotel outside ZTL</li>
+      <li>Rest before class · simple dinner near hotel</li>
+    </ol>
+    <div class="elder-tip"><b>Elder note:</b> a sit-down vineyard lunch with a terrace view is much kinder on tired legs than another hill-town walk — and a more memorable goodbye to Tuscany.</div>
+  </div>
+
+  <div class="section">
+    <h3>🍷 Chianti vineyard lunch picks (book ahead)</h3>
+    <ul class="rec-list">
+      <li><b>Poggio Amorelli (Castellina in Chianti)</b> — family-run, intimate tastings with light Tuscan lunch on the terrace. Easy parking. Ask for the "tasting + lunch" combo, English-speaking hosts.</li>
+      <li><b>Famiglia Mazzarrini</b> — <a href="https://famigliamazzarrini.it/en/" target="_blank" rel="noopener">famigliamazzarrini.it</a>. Sit-down tasting + cheese/cured meats on a shaded terrace, ~90 min. Family producer, very welcoming.</li>
+      <li><b>Castello di Albola (Radda in Chianti)</b> — larger estate with step-free terrace, full lunch menu, panoramic Chianti view.</li>
+      <li><b>Rocca delle Macìe (Castellina)</b> — professional setup, on-site restaurant + wine shop, accessible facilities.</li>
+    </ul>
+    <div class="tip">📞 <b>Booking script:</b> "tasting + light lunch, party of 3, two seniors, please confirm step-free access and shaded terrace seating." Most Chianti estates are very accommodating.</div>
+  </div>
+
+  <div class="section">
+    <h3>Class-day driving math</h3>
+    <ul class="rec-list">
+      <li><b>Driver alert:</b> Italy's limit is 0.5 g/L. At a tasting for 3, the driver should split pours or use the spit bucket. Police checks on the A1 are common.</li>
+      <li>Ask the winery for <b>small pours</b> (assaggio) for the driver and water + bread between wines.</li>
+      <li>For a stress-free version: a <b>private driver pickup</b> from Val d'Orcia → winery → Florence (Tuscan Driver, Florence Cab Tours) is ~€300 and removes all risk.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Lunch AT the winery</b><span>Best option — tasting + light lunch in one stop. No extra driving.</span></div>
+      <div class="food-card"><b>Backup: Trattoria La Torre (Castellina)</b><span>Village trattoria, calm, ground floor, classic Chianti menu.</span></div>
+      <div class="food-card"><b>Florence dinner near hotel</b><span>Keep it close. Ask your hotel for a quiet trattoria within 5 min walk.</span></div>
+    </div>
+    <div class="tip">🚗 <b>Florence ZTL:</b> Mon–Fri 07:30–20:00, Sat 07:30–16:00, plus summer night ZTL Thu/Fri/Sat. Park <b>outside</b>: Parcheggio Beccaria, Parterre, Sant'Ambrogio garages.</div>
+  </div>
+</section>
+
+<!-- DAY 6 -->
+<section class="day" id="day6">
+  <div class="day-head">
+    <h2>Day 6 · Florence relaxed main day <span class="badge easy">Free evening</span></h2>
+    <span class="date">Fri, 12 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Morning: Duomo exterior, Piazza Signoria, Palazzo Vecchio, Ponte Vecchio</li>
+      <li>Sit-down lunch · break</li>
+      <li>Afternoon: choose ONE indoor visit (Accademia / Uffizi / Palazzo Vecchio)</li>
+      <li>Evening: optional taxi to Piazzale Michelangelo OR relaxed Oltrarno dinner</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks (elder-friendly)</h3>
+    <ul class="rec-list">
+      <li><b>Accademia</b> — much shorter than Uffizi (90 min vs 3 hours), step-free, benches in front of David. Best mobility-friendly pick.</li>
+      <li><b>Uffizi</b> — has elevators and benches in every gallery. Book a timed entry online.</li>
+      <li><b>Duomo dome climb</b> — <b>skip</b> (463 narrow spiral steps, no elevator).</li>
+      <li><b>Giotto's bell tower</b> — also skip (414 steps).</li>
+      <li><b>Mercato Centrale (upstairs)</b> — elevator, calm food-hall lunch with easy seating.</li>
+      <li><b>Piazzale Michelangelo</b> — take a <b>taxi</b> up. The view is worth it; the staircase is not.</li>
+    </ul>
+  </div>
+
+  <div class="elder-tip"><b>Elder note:</b> Florence has a lot of cobblestones. Cushioned shoes, sit-down every 90 minutes, taxis without guilt.</div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Lunch: Trattoria Marione</b><span>Calm, central, no tourist rush, ground floor. Walk-in friendly.</span></div>
+      <div class="food-card"><b>Lunch hall: Mercato Centrale</b><span>Elevator to upstairs hall. Big shared tables, air-con.</span></div>
+      <div class="food-card"><b>Oltrarno dinner: Trattoria Cammillo</b><span>Old-school, white tablecloths, kind staff, no stairs. Reserve a week ahead.</span></div>
+      <div class="food-card"><b>Oltrarno alt: Il Santo Bevitore</b><span>Refined Tuscan, calm room. Book ahead.</span></div>
+      <div class="food-card"><b>Gelato: Gelateria della Passera</b><span>Tiny, Oltrarno, no queues.</span></div>
+    </div>
+    <div class="tip">🥩 <b>Try:</b> bistecca alla Fiorentina (shareable), pappa al pomodoro, ribollita, schiacciata bread.</div>
+  </div>
+</section>
+
+<!-- DAY 7 -->
+<section class="day" id="day7">
+  <div class="day-head">
+    <h2>Day 7 · Florence buffer day <span class="badge easy">Rest day</span></h2>
+    <span class="date">Sat, 13 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Three flexible options</h3>
+    <ul class="rec-list">
+      <li><b>Option A — Easy day:</b> slow breakfast, Oltrarno / Santo Spirito walk, Bardini Gardens, café breaks, early dinner.</li>
+      <li><b>Option B — Missed sights:</b> Uffizi / Accademia / Palazzo Pitti / Santa Croce. Pick <b>one</b>.</li>
+      <li><b>Option C — Practical day:</b> laundry, repacking, confirm Bologna hotel parking, check route, early night.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Gentle activity picks</h3>
+    <ul class="rec-list">
+      <li><b>Bardini Gardens</b> — smaller and flatter than Boboli, wisteria pergola + Florence panorama. Garden café.</li>
+      <li><b>Santa Croce</b> — flat-entry basilica with the tombs of Michelangelo, Galileo, Machiavelli. Quiet inside.</li>
+      <li><b>Oltrarno artisan walk</b> — Via Maggio + Borgo San Jacopo. Old workshops, flat, café stops.</li>
+      <li><b>Boboli</b> — only if everyone is fresh; lots of hills and gravel.</li>
+    </ul>
+  </div>
+
+  <div class="elder-tip"><b>Elder note:</b> this is the day to <b>not push</b>. A good rest here makes Bologna and the Dolomites much more enjoyable.</div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Long lazy lunch: La Giostra</b><span>Theatrical, kind staff, perfect for a long Saturday lunch.</span></div>
+      <div class="food-card"><b>Calm dinner: Trattoria 4 Leoni</b><span>Piazza della Passera, outdoor seating, ground floor.</span></div>
+      <div class="food-card"><b>Light dinner: Antica Mescita San Niccolò</b><span>Cozy Tuscan, locals. Good for an early-night day.</span></div>
+      <div class="food-card"><b>Aperitivo: Le Volpi e l'Uva</b><span>Behind Ponte Vecchio. Wine + cheese boards.</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider bologna">· Bologna ·</div>
+
+<!-- DAY 8 -->
+<section class="day" id="day8">
+  <div class="day-head">
+    <h2>Day 8 · Florence → Bologna <span class="badge easy">Easy</span></h2>
+    <span class="date">Sun, 14 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Slow breakfast · check out</li>
+      <li>Drive to Bologna (~1.5 h on the A1)</li>
+      <li>Park at hotel or pre-arranged garage</li>
+      <li>Compact afternoon walk + early dinner</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks — Bologna (gentle)</h3>
+    <ul class="rec-list">
+      <li><b>Piazza Maggiore + Basilica di San Petronio</b> — flat-entry basilica, benches all around.</li>
+      <li><b>Portico walks</b> — Bologna's 40 km of UNESCO covered porticoes mean shaded, weather-proof, smooth walking. Perfect for elders.</li>
+      <li><b>Quadrilatero food market</b> — small flat alleys with delis, fishmongers, salumerie. Browse, taste, buy.</li>
+      <li><b>Santo Stefano (Seven Churches)</b> — flat entry, peaceful interior, easy 30-min visit.</li>
+      <li><b>Two Towers (Asinelli)</b> — <b>skip</b> the climb (498 wooden steps); enjoy from the square.</li>
+      <li><b>Archiginnasio</b> — flat-entry old library with the anatomical theatre. Calm stop.</li>
+    </ul>
+  </div>
+
+  <div class="elder-tip"><b>Elder note:</b> Bologna's porticoes are the city's superpower for slow travel — shade in summer, no rain worries, flat walking. Build the day around them.</div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Lunch arrival: Trattoria Anna Maria</b><span>Handmade tortellini and tagliatelle al ragù. Calm, ground floor.</span></div>
+      <div class="food-card"><b>Dinner: Osteria dell'Orsa</b><span>Casual, locals, big portions. Walk-in friendly.</span></div>
+      <div class="food-card"><b>Refined: Trattoria di Via Serra</b><span>Slightly outside the centre — take a taxi. Some of the best ragù in Bologna.</span></div>
+      <div class="food-card"><b>Aperitivo: Osteria del Sole</b><span>Historic wine-only osteria (since 1465). BYO food. Atmospheric.</span></div>
+    </div>
+    <div class="tip">🍝 <b>Try:</b> tortellini in brodo, tagliatelle al ragù, mortadella, crescentine fritte, Lambrusco.</div>
+  </div>
+</section>
+
+<div class="section-divider dolomites">· Dolomites ·</div>
+
+<!-- DAY 9 -->
+<section class="day dol" id="day9">
+  <div class="day-head">
+    <h2>Day 9 · Bologna → Val Gardena <span class="badge class">Class 7–10 pm</span></h2>
+    <span class="date">Mon, 15 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Breakfast in Bologna · optional short walk if fresh</li>
+      <li>Drive Bologna → Bolzano → Val Gardena (~4 h with breaks)</li>
+      <li>Motorway service / coffee stops only</li>
+      <li>Target arrival: 16:00–16:30 in Ortisei / Santa Cristina / Selva</li>
+      <li>Check in · simple dinner or snacks · class</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Where to sleep — base picks</h3>
+    <ul class="rec-list">
+      <li><b>Ortisei</b> (recommended) — main hub, best for lifts, restaurants, easy strolls in the village. Best for elders.</li>
+      <li><b>Santa Cristina</b> — quieter middle of the valley, very central for both Seceda and Alpe di Siusi.</li>
+      <li><b>Selva</b> — closest to the mountain passes, more rustic feel.</li>
+    </ul>
+  </div>
+
+  <div class="alpine-tip"><b>Alpine note:</b> the Val Gardena road from Bolzano (SS242) has switchbacks. Build in extra time and a coffee stop in Castelrotto or Ponte Gardena to break it up. Avoid arriving after dark.</div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Roadside coffee: Autogrill Reno Est</b><span>Best motorway stop between Bologna and Bolzano.</span></div>
+      <div class="food-card"><b>Ortisei dinner: Tubladel</b><span>Cozy Ladin-Tyrolean cuisine, low ceilings + cushioned benches.</span></div>
+      <div class="food-card"><b>Class-day takeaway: Bäckerei Vinatzer</b><span>Bakery + deli on the main street. Schlutzkrapfen + apfelstrudel for hotel-room dinner.</span></div>
+      <div class="food-card"><b>Hotel half-board</b><span>Most Val Gardena hotels offer half-board — on a class day, it's the easiest choice.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 10 -->
+<section class="day dol" id="day10">
+  <div class="day-head">
+    <h2>Day 10 · Seceda by lift <span class="badge alpine">Mountain day</span></h2>
+    <span class="date">Tue, 16 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Morning: Ortisei → Furnes gondola → Furnes → Seceda cable car</li>
+      <li>Enjoy the main Seceda viewpoint at the top</li>
+      <li>Mountain hut lunch / coffee</li>
+      <li>Short flat walk near the top only if comfortable</li>
+      <li>Return to Ortisei mid-afternoon, rest before dinner</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks</h3>
+    <ul class="rec-list">
+      <li><b>Seceda viewpoint</b> — 5-min walk from the top cable car station to one of the most iconic Dolomites views (the famous jagged ridge).</li>
+      <li><b>Sun terrace at the cable car station</b> — sit, look, photograph. Benches and full panorama, no hike required.</li>
+      <li><b>Short walk towards Baita Sofie</b> — 25 min mostly flat path on the meadow, with rifugio for refreshments.</li>
+      <li><b>Skip</b> the Fermeda chairlift — doesn't open until later in June anyway, and the path is steeper.</li>
+    </ul>
+  </div>
+
+  <div class="alpine-tip"><b>Alpine note:</b> the top of Seceda is at 2,500 m — bring a warm layer even in June, and take it slow for the first 30 min to adjust to altitude. The lift does the work; you just need to walk gently.</div>
+
+  <div class="section">
+    <h3>Booking + weather</h3>
+    <ul class="rec-list">
+      <li>Book Seceda lift tickets online the night before (<a href="https://www.valgardena-groeden.com" target="_blank" rel="noopener">valgardena-groeden.com</a>). Cheaper round-trip than two singles.</li>
+      <li>Check webcam at sunrise — if the top is in cloud, swap with Day 11 plan (Alpe di Siusi).</li>
+      <li>The Ortisei–Furnes gondola usually starts ~8:30; aim for 9:00–9:30 to avoid the rush.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>On the mountain: Baita Sofie</b><span>Sun terrace overlooking the ridge. Knödel, polenta, strudel.</span></div>
+      <div class="food-card"><b>Mountain hut: Rifugio Firenze (Regensburger Hütte)</b><span>Slightly farther but quieter, classic alpine fare.</span></div>
+      <div class="food-card"><b>Ortisei dinner: Anna Stuben</b><span>Refined Ladin cuisine in Hotel Gardena Grödnerhof. Book.</span></div>
+      <div class="food-card"><b>Ortisei casual: Pizzeria Mauriz Keller</b><span>Cellar pizzeria, low light, comfortable seating.</span></div>
+    </div>
+    <div class="tip">🥟 <b>Try:</b> canederli (knödel) in brodo, schlutzkrapfen (spinach-ricotta ravioli), tirtlan, kaiserschmarrn, apfelstrudel.</div>
+  </div>
+</section>
+
+<!-- DAY 11 -->
+<section class="day dol" id="day11">
+  <div class="day-head">
+    <h2>Day 11 · Alpe di Siusi OR Val di Funes <span class="badge class">Class 7–10 pm</span></h2>
+    <span class="date">Wed, 17 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Option A — Alpe di Siusi by gondola (recommended)</h3>
+    <ol class="plan-list">
+      <li>Morning: Ortisei → Alpe di Siusi gondola (Mont Sëuc)</li>
+      <li>Short flat walk on Europe's largest alpine meadow</li>
+      <li>Mountain hut lunch or coffee stop</li>
+      <li>Return to Ortisei by early afternoon</li>
+      <li>Rest at hotel before class</li>
+    </ol>
+    <div class="alpine-tip"><b>Why this works:</b> Alpe di Siusi is famously flat (huge meadow at 2,000 m). No hike required — the view is right at the lift station, with benches and panoramic restaurants.</div>
+  </div>
+
+  <div class="section">
+    <h3>Option B — Val di Funes scenic drive</h3>
+    <ol class="plan-list">
+      <li>Drive Val Gardena → Val di Funes (~45 min)</li>
+      <li>Santa Maddalena viewpoint — the postcard church with Odle peaks behind</li>
+      <li>San Giovanni in Ranui chapel — second iconic photo stop</li>
+      <li>Coffee in Funes village</li>
+      <li>Return to Val Gardena</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Recommended choice</h3>
+    <ul class="rec-list">
+      <li><b>Choose A (Alpe di Siusi)</b> if the weather is clear and everyone enjoyed Seceda — the meadow is gentler than Seceda and very photogenic.</li>
+      <li><b>Choose B (Val di Funes)</b> if anyone is tired of lifts, or if rain/clouds make a drive better than a mountain top.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Return time</h3>
+    <ul class="rec-list">
+      <li>Return to hotel by <b>17:00–17:30</b>.</li>
+      <li>Light dinner or hotel half-board · class 7–10 pm.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Alpe di Siusi: Gostner Schwaige</b><span>Famous mountain hut with herb-garden cuisine. Reserve.</span></div>
+      <div class="food-card"><b>Alpe di Siusi: Sanon Hütte</b><span>Hearty knödel + view. Closer to the gondola top.</span></div>
+      <div class="food-card"><b>Val di Funes: Gasthof Pension Geisler</b><span>Family-run in Santa Maddalena. Tyrolean classics.</span></div>
+      <div class="food-card"><b>Ortisei takeaway: Bäckerei Vinatzer</b><span>Same as Monday — perfect for class-day room dinner.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 12 -->
+<section class="day dol" id="day12">
+  <div class="day-head">
+    <h2>Day 12 · Val Gardena → Dobbiaco <span class="badge class">Class 7–10 pm</span></h2>
+    <span class="date">Thu, 18 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Slow breakfast · check out</li>
+      <li>Drive Val Gardena → Passo Gardena → Val Badia → Pustertal → Dobbiaco (~2.5 h with stops)</li>
+      <li>Optional stop: Lago di Dobbiaco lakeside walk + coffee</li>
+      <li>Target arrival: 16:00–16:30</li>
+      <li>Check in · rest · class</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks — scenic drive</h3>
+    <ul class="rec-list">
+      <li><b>Passo Gardena</b> — one of the most beautiful mountain passes, safe pull-offs for photos. Driving is slow but rewarding.</li>
+      <li><b>Corvara / La Villa</b> — quick coffee stop in Val Badia if you need a break.</li>
+      <li><b>Lake Dobbiaco</b> — easy flat lakeside path, beautiful pine forest, great low-effort arrival stop.</li>
+      <li><b>Skip</b> any big detours — keep it a class-day transfer.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Where to sleep — base picks</h3>
+    <ul class="rec-list">
+      <li><b>Dobbiaco (Toblach)</b> — practical, flat town, central for Tre Cime + Braies + Misurina.</li>
+      <li><b>San Candido (Innichen)</b> — slightly more charming pedestrian centre, great cafés. Equally good base.</li>
+      <li>Both are 6 km apart on a flat valley road.</li>
+    </ul>
+  </div>
+
+  <div class="alpine-tip"><b>Alpine note:</b> the Passo Gardena road has tight bends. Two pull-offs near the top are safe for photos; otherwise keep moving. Carry water — altitude + sun is dehydrating.</div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Lake Dobbiaco: Gratschwirt</b><span>Historic inn near the lake, garden seating, easy menu.</span></div>
+      <div class="food-card"><b>Dobbiaco dinner: Tilia (Hotel Cristallo)</b><span>Refined Tyrolean, beautiful dining room. Book.</span></div>
+      <div class="food-card"><b>San Candido dinner: Mountain Spa Restaurant</b><span>At Leitlhof Hotel, ground floor, locals + visitors.</span></div>
+      <div class="food-card"><b>Class-day takeaway: Bäckerei Hofmann (San Candido)</b><span>Bakery, salumi, hot strudel.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 13 -->
+<section class="day dol" id="day13">
+  <div class="day-head">
+    <h2>Day 13 · Tre Cime / Lake Misurina <span class="badge alpine">Mountain day</span></h2>
+    <span class="date">Fri, 19 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Drive Dobbiaco → Lake Misurina (~30 min)</li>
+      <li>Continue up the Tre Cime toll road to Rifugio Auronzo (if booked)</li>
+      <li>Short viewpoint walk only — <b>do not</b> attempt the full 10 km loop</li>
+      <li>Coffee / lunch at Rifugio Auronzo</li>
+      <li>Return via Lake Misurina · lakeside coffee + photo</li>
+      <li>Back to hotel for rest</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Activity picks</h3>
+    <ul class="rec-list">
+      <li><b>Rifugio Auronzo terrace (2,320 m)</b> — sit on the deck with three peaks of Tre Cime right in front of you. No walk needed.</li>
+      <li><b>Short flat walk towards Rifugio Lavaredo</b> — only the first 10 min are mostly flat. Turn back before any climb.</li>
+      <li><b>Lake Misurina</b> — flat 2 km lakeside path with benches, or just sit at a lakeside café.</li>
+      <li><b>Avoid</b> the full Tre Cime loop (10 km, exposed, no shelter from sun or weather).</li>
+    </ul>
+  </div>
+
+  <div class="alpine-tip"><b>Booking critical:</b> the Tre Cime toll road (SR48bis from Misurina) charges ~€30 per car and parking at Rifugio Auronzo fills early. Reserve a slot at <a href="https://3cime.tre-cime.it" target="_blank" rel="noopener">3cime.tre-cime.it</a> as soon as June dates open. Arrive before 10 am or after 3 pm.</div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Top: Rifugio Auronzo</b><span>Self-service terrace + table-service room. Big portions, fair prices. Views are the main course.</span></div>
+      <div class="food-card"><b>Top alt: Rifugio Lavaredo</b><span>20-min walk from Auronzo (only attempt if comfortable). Quieter, family-run.</span></div>
+      <div class="food-card"><b>Misurina: Chalet Lago Antorno</b><span>Slightly above the lake, panoramic terrace, great trout and goulash.</span></div>
+      <div class="food-card"><b>Dobbiaco dinner: Tilia or Gratschwirt</b><span>Repeat from Thursday — both are great, low-effort options.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 14 -->
+<section class="day dol" id="day14">
+  <div class="day-head">
+    <h2>Day 14 · Lago di Braies OR Cortina <span class="badge easy">Last full day</span></h2>
+    <span class="date">Sat, 20 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Option A — Lago di Braies (recommended if booking works)</h3>
+    <ol class="plan-list">
+      <li>Drive Dobbiaco → Braies (~30 min)</li>
+      <li>Park (pre-booked) and walk the easier eastern lakeside section</li>
+      <li>Coffee on the lake terrace</li>
+      <li>Optional short rowing-boat ride if weather is calm</li>
+      <li>Back to hotel by lunch or early afternoon</li>
+    </ol>
+    <div class="alpine-tip"><b>Booking critical:</b> Lago di Braies has strict access rules in June. Either pre-book a parking slot at <a href="https://prags.bz" target="_blank" rel="noopener">prags.bz</a>, or take the shuttle bus from Dobbiaco station. Without a booking, cars are turned away. Arrive early (8–9 am) for the best light and quiet.</div>
+  </div>
+
+  <div class="section">
+    <h3>Option B — Cortina d'Ampezzo easy day</h3>
+    <ol class="plan-list">
+      <li>Drive Dobbiaco → Cortina (~30 min)</li>
+      <li>Walk Corso Italia (pedestrian, mostly flat)</li>
+      <li>Long lunch on a terrace</li>
+      <li>Optional scenic drive to Passo Falzarego (1 h round trip) only if energy allows</li>
+      <li>Return to Dobbiaco</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Recommended choice</h3>
+    <ul class="rec-list">
+      <li><b>Choose A (Braies)</b> if the parking booking went through — it's the most photogenic Dolomite lake and an easy lakeside visit.</li>
+      <li><b>Choose B (Cortina)</b> if anyone is tired of nature stops, if Braies booking failed, or if the weather is poor.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Where to eat</h3>
+    <div class="food-grid">
+      <div class="food-card"><b>Braies lakeside: Hotel Pragser Wildsee restaurant</b><span>Historic 1899 hotel right on the lake. Terrace. Reserve.</span></div>
+      <div class="food-card"><b>Cortina lunch: Tivoli (Michelin)</b><span>Refined alpine cuisine just above town. Reserve well ahead.</span></div>
+      <div class="food-card"><b>Cortina casual: Al Camin</b><span>Mountain-style trattoria, locals, ground floor, easy menu.</span></div>
+      <div class="food-card"><b>Farewell dinner: Tilia (Dobbiaco)</b><span>Save your best dinner reservation for tonight. Memorable end to the trip.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY 15 -->
+<section class="day dol" id="day15">
+  <div class="day-head">
+    <h2>Day 15 · Departure <span class="badge easy">Travel day</span></h2>
+    <span class="date">Sun, 21 Jun</span>
+  </div>
+
+  <div class="section">
+    <h3>Your plan</h3>
+    <ol class="plan-list">
+      <li>Breakfast · check out</li>
+      <li>Drive to airport with generous buffer for mountain roads + Sunday traffic</li>
+      <li>Return rental car at airport</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h3>Drive time notes</h3>
+    <ul class="rec-list">
+      <li><b>Dobbiaco → Treviso Airport</b>: ~2 h 45 min via A27. Add 1 h buffer for weekend traffic + fuel + car return.</li>
+      <li><b>Dobbiaco → Venice Marco Polo</b>: ~3 h via A27. Similar buffer.</li>
+      <li><b>Dobbiaco → Innsbruck</b>: ~2 h via the Brenner Pass — easiest option if flying from Austria.</li>
+    </ul>
+  </div>
+
+  <div class="alpine-tip"><b>If your flight is early:</b> consider moving closer to the airport on Saturday 20 June night (e.g., Treviso or Venice mainland hotel) instead of sleeping in Dobbiaco. Cuts stress to almost zero.</div>
+</section>
+
+<!-- BOOKINGS -->
+<section class="booking" id="booking">
+  <h3>To book in advance</h3>
+
+  <h4>Tuscany</h4>
+  <ul>
+    <li>Pisa Cathedral / Baptistery combo ticket (skip Tower climb)</li>
+    <li>Siena OPA SI Pass — ask about step-free entry</li>
+    <li>Florence: <b>one</b> of Uffizi or Accademia — Accademia is the elder-friendlier pick</li>
+    <li>Chianti vineyard lunch near Castellina (Poggio Amorelli, Famiglia Mazzarrini, Castello di Albola, Rocca delle Macìe)</li>
+    <li>Florence Friday or Saturday dinner reservations</li>
+    <li>Hotels with reliable parking outside ZTL in each city</li>
+  </ul>
+
+  <h4>Bologna</h4>
+  <ul>
+    <li>Hotel parking or garage access — confirm ZTL permit process</li>
+    <li>Sunday dinner reservation (Anna Maria or Trattoria di Via Serra)</li>
+  </ul>
+
+  <h4>Dolomites — critical bookings</h4>
+  <ul>
+    <li><b>Seceda lift tickets</b> — book online at valgardena-groeden.com the night before</li>
+    <li><b>Alpe di Siusi gondola</b> — same, plus check parking restrictions if driving (Castelrotto road is limited 9 am – 5 pm)</li>
+    <li><b>Tre Cime toll road + Rifugio Auronzo parking</b> — reserve at 3cime.tre-cime.it as soon as June slots open</li>
+    <li><b>Lago di Braies parking</b> — book at prags.bz or plan to use the shuttle from Dobbiaco</li>
+    <li>Check lift opening dates close to travel — early-June operations vary by lift and weather</li>
+    <li>Farewell dinner reservation (Tilia in Dobbiaco or similar)</li>
+  </ul>
+</section>
+
+<!-- RULES -->
+<section class="rules">
+  <h3>Class-day rule</h3>
+  <ul>
+    <li>Hotel by <b>17:00–17:30</b> on Mon/Wed/Thu</li>
+    <li>Light dinner or takeaway — never a sit-down restaurant booking on a class night</li>
+    <li>Check Wi-Fi as soon as you check in</li>
+    <li>No late transfers, no driving after class</li>
+  </ul>
+  <p style="margin-top:10px; font-size:13px; color:var(--muted);">
+    Affects: Mon 8 (Pisa→Siena) · Wed 10 (Val d'Orcia loop) · Thu 11 (Chianti→Florence) · Mon 15 (Bologna→Val Gardena) · Wed 17 (Val Gardena scenic) · Thu 18 (Val Gardena→Dobbiaco)
+  </p>
+</section>
+
+</main>
+
+<footer>
+  Buon viaggio · 15-day slow-pace plan for Derek's June 2026 Italy trip with elderly companions
+</footer>
+
+<script src="https://unpkg.com/leaflet@1
