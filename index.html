@@ -1142,4 +1142,44 @@
   Buon viaggio · 15-day slow-pace plan for Derek's June 2026 Italy trip with elderly companions
 </footer>
 
-<script src="https://unpkg.com/leaflet@1
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map', { scrollWheelZoom: false }).setView([43.35, 11.85], 6);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const stops = [
+    { n: 0, name: 'Treviso Airport', lat: 45.6484, lng: 12.1944, alpine: false },
+    { n: 1, name: 'Pisa', lat: 43.7228, lng: 10.4017, alpine: false },
+    { n: 2, name: 'Siena', lat: 43.3188, lng: 11.3308, alpine: false },
+    { n: 3, name: "Val d'Orcia (Pienza)", lat: 43.0767, lng: 11.6797, alpine: false },
+    { n: 4, name: 'Chianti (Castellina in Chianti)', lat: 43.4684, lng: 11.2850, alpine: false },
+    { n: 5, name: 'Florence', lat: 43.7696, lng: 11.2558, alpine: false },
+    { n: 6, name: 'Bologna', lat: 44.4949, lng: 11.3426, alpine: false },
+    { n: 7, name: 'Val Gardena (Ortisei)', lat: 46.5744, lng: 11.6716, alpine: true },
+    { n: 8, name: 'Dobbiaco', lat: 46.7347, lng: 12.2258, alpine: true }
+  ];
+
+  const route = stops.map(s => [s.lat, s.lng]);
+  L.polyline(route, { color: '#b04a2f', weight: 4, opacity: 0.85 }).addTo(map);
+
+  stops.forEach((s) => {
+    const color = s.alpine ? '#3d7a6e' : '#b04a2f';
+    const marker = L.circleMarker([s.lat, s.lng], {
+      radius: 9,
+      color,
+      fillColor: color,
+      fillOpacity: 0.95,
+      weight: 2
+    }).addTo(map);
+
+    marker.bindTooltip(String(s.n), { permanent: true, direction: 'center', className: 'stop-label' });
+    marker.bindPopup(`<b>${s.n}. ${s.name}</b>`);
+  });
+
+  map.fitBounds(route, { padding: [30, 30] });
+</script>
+</body>
+</html>
